@@ -22,7 +22,14 @@ namespace Assignment_Lab3
                     a = double.Parse(Console.ReadLine());
                     if (a == 0)
                     {
-
+                        Console.WriteLine("The value which you have entered is not valid for division.. Please enter a value except zeor !");
+                        continue;
+                    }
+                    if (a == -1)
+                    {
+                        Console.WriteLine("You have chose to exit the application. Bye now ");
+                        Console.ReadLine();
+                        break;
                     }
                 }
                 catch (Exception)
