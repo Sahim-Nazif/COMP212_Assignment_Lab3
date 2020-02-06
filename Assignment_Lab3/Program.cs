@@ -31,6 +31,15 @@ namespace Assignment_Lab3
                         Console.ReadLine();
                         break;
                     }
+                    Console.WriteLine("\nPlease enter second number: ");
+                    b = double.Parse(Console.ReadLine());
+
+                    Thread addition = new Thread(new ThreadStart(Add));
+                    Thread subtraction = new Thread(() => Subtract());
+                    Thread multipication = new Thread(new ThreadStart(Multiply));
+                    Thread division = new Thread(() => Divide());
+                    Console.WriteLine("\nYour Input Calculation Results are");
+                    Console.WriteLine("------------------------------------");
                 }
                 catch (Exception)
                 {
@@ -39,23 +48,26 @@ namespace Assignment_Lab3
             }
             
         }
+        public static void Add()
+        {
+            Thread.Sleep(3000);
+            result = a + b;
+            Console.WriteLine("\nThe result of addition is :" + result);
+
+        }
+        public static void Subtract()
+        {
+
+        }
+        public static void Multiply()
+        {
+
+        }
+        public static void Divide()
+        {
+
+        }
     }
 
-    public static void Add()
-    {
-        Thread.Sleep(3000);
 
-    }
-    public static void Subtract()
-    {
-
-    }
-    public static void Multiply()
-    {
-
-    }
-    public static void Divide()
-    {
-
-    }
 }
