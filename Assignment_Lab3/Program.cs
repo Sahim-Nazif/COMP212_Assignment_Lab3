@@ -20,7 +20,7 @@ namespace Assignment_Lab3
                 {
                     Console.Write("\nPlease enter first number or -1 to discontinue: ");
                     a = double.Parse(Console.ReadLine());
-                    if (a == 0)
+                    if (a == 0 || a<=0)
                     {
                         Console.WriteLine("The value which you have entered is not valid for division.. Please enter a value except zeor !");
                         continue;
@@ -40,6 +40,11 @@ namespace Assignment_Lab3
                     Thread division = new Thread(() => Divide());
                     Console.WriteLine("\nYour Input Calculation Results are");
                     Console.WriteLine("------------------------------------");
+                    addition.Start();
+                    subtraction.Start();
+                    multipication.Start();
+                    division.Start();
+                    Console.ReadLine();
 
                 }
                 catch (Exception)
@@ -73,12 +78,10 @@ namespace Assignment_Lab3
         public static void Divide()
         {
             Thread.Sleep(11000);
-            result = a + b;
+            result = a / b;
             Console.WriteLine("\nThe result of division is :" + result);
             Console.WriteLine("\nEnd....");
 
         }
     }
-
-
 }
